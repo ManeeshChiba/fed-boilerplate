@@ -1,5 +1,5 @@
-# Web app boilerplate
-Get your web app up and running quickly with a [Backbone](http://backbonejs.org/), [Browserify](http://browserify.org/) & [Gulp](http://gulpjs.com/).
+# FED Web Boilerplate
+Get your website up and running quickly with [Gulp](http://gulpjs.com/), [SASS](http://sass-lang.com/) and Image optimization.
 
 ## Getting Started
 

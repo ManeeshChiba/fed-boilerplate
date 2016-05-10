@@ -10,12 +10,18 @@
  *
  * To add a new task, simply add a new task file to gulp/tasks.
  *
- * Heavily inspired by the gulp build for 
+ * Modified upon https://github.com/brad426/web-app-boilerplate which was
+ * heavily inspired by the gulp build for 
  * https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate
  * 
  */
+var fs          = require('fs'),
+	onlyScripts	= require('./gulp/util/fileType')('js'),
+	tasks       = fs.readdirSync('./gulp/tasks/').filter(onlyScripts);
 
 global.isProd = false;
 global.stipWildcard = /\/\*\*.*$/ig;
 
-require('./gulp');
+tasks.forEach(function(task) {
+  require('./gulp/tasks/' + task);
+});
