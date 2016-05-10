@@ -4,6 +4,8 @@ var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     sassLint     = require('gulp-sass-lint'),
     autoprefixer = require('gulp-autoprefixer'),
+    rev          = require('gulp-rev'),
+    gulpif       = require('gulp-if'),
     handleErrors = require('../util/handleErrors');
 
 gulp.task('styles', function () {
@@ -23,5 +25,6 @@ gulp.task('styles', function () {
     .pipe(autoprefixer({
         browsers: ['last 2 versions', '> 1%', 'ie 9', 'ie 10']
     }))
+    .pipe( gulpif(global.mode !== 'dev', rev()))
     .pipe( gulp.dest(global.destination + '/css') );
 });
