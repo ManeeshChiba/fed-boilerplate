@@ -12,4 +12,8 @@ var buffer = require('vinyl-buffer');
 var gutil = require('gulp-util');
 var assign = require('lodash.assign');
 
-gulp.task('scripts', function() {});
+gulp.task('scripts', function() {
+
+	
+
+});

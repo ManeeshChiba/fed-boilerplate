@@ -1,13 +1,19 @@
 'use strict';
 
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var handleErrors = require('../util/handleErrors');
+var gulp         = require('gulp'),
+    sass         = require('gulp-sass'),
+    sassLint     = require('gulp-sass-lint'),
+    autoprefixer = require('gulp-autoprefixer'),
+    handleErrors = require('../util/handleErrors');
 
 gulp.task('styles', function () {
 
   return gulp.src('src/scss/**/*.scss')
+    .pipe(sassLint({
+      configFile: '../scss-lint.yml'
+    }))
+    .pipe(sassLint.format())
+    .on('error', handleErrors)
     .pipe( sass({
       sourceComments: (global.mode === 'dev') ? true : false,
       outputStyle: (global.mode === 'dev') ? 'nested': 'compressed',
