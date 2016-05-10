@@ -26,5 +26,7 @@ gulp.task('styles', function () {
         browsers: ['last 2 versions', '> 1%', 'ie 9', 'ie 10']
     }))
     .pipe( gulpif(global.mode !== 'dev', rev()))
-    .pipe( gulp.dest(global.destination + '/css') );
+    .pipe( gulp.dest(global.destination + '/css') )
+    .pipe( rev.manifest({merge: true}))
+    .pipe( gulpif(global.mode !== 'dev', gulp.dest('./src/maps') ));
 });

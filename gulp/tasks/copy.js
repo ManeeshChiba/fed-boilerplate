@@ -16,7 +16,8 @@ gulp.task('copy', function () {
     '!src/{js,js/**}', // scripts are handled by scripts task
     '!src/{img,img/**}', // handled by image task
     '!src/{scss,scss/**}', // handled by styles task
-    '!src/{partial,partial/**}' // we don't need partial
+    '!src/{partial,partial/**}', // we don't need partial
+    '!src/{maps/maps/**}' //we don't need manifests and maps
   ])
   .pipe(gulp.dest(global.destination));
 
