@@ -22,3 +22,9 @@ run:
 `gulp prod`
 
 Production ready files will be compiled/copied into `/prod/`
+
+
+###BrowserSync
+This is an optional extra.
+You will need to install browser-sync globally `npm install -g browser-sync`
+This boilerplate uses browser-sync as an optional addition to kick up a dev server and sync across multiple devices and browsers.

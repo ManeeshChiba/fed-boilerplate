@@ -5,7 +5,7 @@ var gulp     	 = require('gulp'),
 	revReplace = require('gulp-rev-replace'),
 	handleErrors = require('../util/handleErrors');
 
-var manifest = gulp.src("./src/maps/rev-manifest.json");
+var manifest = gulp.src("./dev/maps/rev-manifest.json");
 
 // Compiles HTML includes
 gulp.task('html', function() {

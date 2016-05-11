@@ -6,7 +6,9 @@ var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     rev          = require('gulp-rev'),
     gulpif       = require('gulp-if'),
-    handleErrors = require('../util/handleErrors');
+    sourcemaps = require('gulp-sourcemaps'),
+    handleErrors = require('../util/handleErrors'),
+    browserSync = require('browser-sync');
 
 gulp.task('styles', function () {
 
@@ -25,8 +27,10 @@ gulp.task('styles', function () {
     .pipe(autoprefixer({
         browsers: ['last 2 versions', '> 1%', 'ie 9', 'ie 10']
     }))
+    .pipe( sourcemaps.init())
     .pipe( gulpif(global.mode !== 'dev', rev()))
-    .pipe( gulp.dest(global.destination + '/css') )
+    .pipe( sourcemaps.write())
+    .pipe( gulp.dest(global.destination + '/css'))
     .pipe( rev.manifest({merge: true}))
-    .pipe( gulpif(global.mode !== 'dev', gulp.dest('./src/maps') ));
+    .pipe( gulpif(global.mode !== 'dev', gulp.dest('./dev/maps') ));
 });

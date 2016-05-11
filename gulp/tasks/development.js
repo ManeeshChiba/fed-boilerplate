@@ -7,7 +7,15 @@ gulp.task('dev', function(cb) {
 
   global.mode = 'dev';
   global.destination = 'dev';
+  if (process.argv[3] == '-serve'){
+  	global.serve = true;
+  }
+
+  if (global.serve != true) {
+  	runSequence('clean', ['styles', 'scripts', 'html', 'images', 'copy'], 'watch', cb);	
+  } else {
+  	runSequence('clean', ['styles', 'scripts', 'html', 'images', 'copy', 'serve'], 'watch', cb);	
+  }
   
-  runSequence('clean', ['styles', 'scripts', 'html', 'images', 'copy'], 'watch', cb);
 
 });
