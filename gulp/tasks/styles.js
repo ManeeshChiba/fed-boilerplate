@@ -12,11 +12,6 @@ var gulp         = require('gulp'),
 gulp.task('styles', function () {
 
   return gulp.src('src/scss/**/*.scss')
-    .pipe(sassLint({
-      configFile: '../scss-lint.yml'
-    }))
-    .pipe(sassLint.format())
-    .on('error', handleErrors)
     .pipe( sass({
       sourceComments: (global.mode === 'dev') ? true : false,
       outputStyle: (global.mode === 'dev') ? 'nested': 'compressed',
