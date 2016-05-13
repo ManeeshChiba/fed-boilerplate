@@ -1,4 +1,4 @@
-# FED Web Boilerplate
+# FED Boilerplate
 Get your website up and running quickly.
 
 ## Getting Started
