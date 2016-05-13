@@ -1,30 +1,28 @@
-#WIP
 # FED Web Boilerplate
-Get your website up and running quickly with [Gulp](http://gulpjs.com/), [SASS](http://sass-lang.com/) and Image optimization.
+Get your website up and running quickly.
 
 ## Getting Started
 
-* Install [node.js](http://nodejs.org/)
-* Install Gulp's command line interface `npm install -g gulp`
-* Install project dependencies:
- * `cd root/of/this/project/`
- * `npm install`
+* Install [Node.js](http://nodejs.org/)
+* Install [Gulp](http://gulpjs.com/) command line interface `npm install -g gulp`
 * Update `package.json` with your project's details
+* Install project dependencies by:
+  * `cd root/of/this/project/`
+  * `npm install`
 
 ## During development
-run:
-`gulp dev`
+run: `gulp dev`
 
 Changes should be made inside `/src/`, any updates you make will be compiled/copied into `/dev/`. You should view your work by navigating to `/dev/*.html` in your browser.
 
+###BrowserSync
+This is an optional extra. You will need to install browser-sync globally `npm install -g browser-sync` to use it.
+
+To use browser sync run: `gulp dev -serve`
+
 ## Production builds
-run:
-`gulp prod`
+run: `gulp prod`
 
 Production ready files will be compiled/copied into `/prod/`
 
 
-###BrowserSync
-This is an optional extra.
-You will need to install browser-sync globally `npm install -g browser-sync`
-This boilerplate uses browser-sync as an optional addition to kick up a dev server and sync across multiple devices and browsers.

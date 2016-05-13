@@ -1,19 +1,23 @@
 'use strict';
 
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var gulpif   = require('gulp-if');
-var replace = require('gulp-replace');
-var handleErrors = require('../util/handleErrors');
+var gulp = require('gulp'),
+	uglify = require('gulp-uglify'),
+	concat = require('gulp-concat'),
+	gulpif   = require('gulp-if'),
+	replace = require('gulp-replace'),
+	jshint = require('gulp-jshint'),
+	stylish = require('jshint-stylish'),
+	handleErrors = require('../util/handleErrors');
 
-var stringify = require('stringify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-var assign = require('lodash.assign');
+gulp.task('scripts',['jshints'], function() {
+	return gulp.src('src/js/**/*.js')
+	.pipe(concat('bundle.js'))
+	.pipe(gulpif(global.mode !== 'dev',uglify()))
+	.pipe( gulp.dest(global.destination + '/js'))
+});
 
-gulp.task('scripts', function() {
-
-	
-
+gulp.task('jshints',function(){
+	return gulp.src(['src/js/**/*.js', '!src/js/vendor/**/*.js'])
+	.pipe(jshint())
+	.pipe(jshint.reporter(stylish))
 });
