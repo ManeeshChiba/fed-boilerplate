@@ -15,7 +15,7 @@ run: `gulp dev`
 
 Changes should be made inside `/src/`, any updates you make will be compiled/copied into `/dev/`. You should view your work by navigating to `/dev/*.html` in your browser.
 
-###BrowserSync
+#####BrowserSync
 This is an optional extra. You will need to install browser-sync globally `npm install -g browser-sync` to use it.
 
 To use browser sync run: `gulp dev -serve`
