@@ -25,4 +25,11 @@ run: `gulp prod`
 
 Production ready files will be compiled/copied into `/prod/`
 
+External scripts wrapped in the `<!-- build:js js/bundle.js-->` comment will be replaced by `bundle.js` preserving the load order specified in the HTML file.
+````html
+<!-- build:js js/bundle.js-->
+	<script src="path/to/script-one.js"></script>
+	<script src="path/to/script-two.js"></script>
+<!-- endbuild -->
+````
 
