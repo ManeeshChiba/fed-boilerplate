@@ -2,6 +2,7 @@
 
 var gulp     	 = require('gulp'),
 	gulpif		 = require('gulp-if'),
+	useref = require('gulp-useref'),
 	revReplace = require('gulp-rev-replace'),
 	handleErrors = require('../util/handleErrors');
 
@@ -12,6 +13,7 @@ gulp.task('html', function() {
 
   return gulp.src(['src/*.html'])
 	.pipe( gulpif(global.mode !== 'dev', revReplace({manifest: manifest})))
+	.pipe( gulpif(global.mode !== 'dev', useref()))
     .on('error', handleErrors)
     .pipe(gulp.dest(global.destination));
 });

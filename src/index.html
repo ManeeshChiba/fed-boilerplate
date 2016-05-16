@@ -10,7 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-respond-js.js"></script>
     </head>
 
     <body>
@@ -18,7 +17,9 @@
 
         <section class="app" data-role="app"></section>
 
-        <script src="js/bundle.js"></script>
-
+        <!-- build:js js/bundle.js-->
+        <script src="js/vendor/my-simple.js"></script>
+        <script src="js/main.js"></script>
+        <!-- endbuild -->
     </body>
 </html>
