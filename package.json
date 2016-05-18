@@ -30,6 +30,7 @@
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "lodash.assign": "^4.0.6",
+    "merge-stream": "^1.0.0",
     "path": "^0.12.7",
     "run-sequence": "^1.1.5"
   },
